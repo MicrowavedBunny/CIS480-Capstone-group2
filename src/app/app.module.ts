@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CourseDetailComponent } from './components/course-components/course-detail/course-detail.component';
 import { AddCourseComponent } from './components/course-components/add-course/add-course.component';
 import { RemoveCourseComponent } from './components/course-components/remove-course/remove-course.component';
+import { RegisterPageComponent } from './components/student-components/register-page/register-page.component';
+import { LoginPageComponent } from './components/student-components/login-page/login-page.component';
 
 
 
@@ -20,7 +22,9 @@ import { RemoveCourseComponent } from './components/course-components/remove-cou
     CourseListComponent,
     CourseDetailComponent,
     AddCourseComponent,
-    RemoveCourseComponent
+    RemoveCourseComponent,
+    RegisterPageComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
