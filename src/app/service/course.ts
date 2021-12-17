@@ -6,4 +6,5 @@ export class Course {
     credits!: Number;
     type!: String;
     cap!: Number;
+    owner!: String;
 }

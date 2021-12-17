@@ -1,3 +1,4 @@
+<a class="navbar-brand">Register for Course</a>
 <div class="row justify-content-center mt-5">
     <div class="col-md-4">
         <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
@@ -24,6 +25,10 @@
             <div class="form-group">
                 <label>cap</label>
                 <input class="form-control" type="number" formControlName="cap" required>
+            </div>
+            
+            <div class="form-group">
+                <input class="form-control" type="hidden" formControlName="owner" required>
             </div>
             <div class="form-group">
                 <button class="btn btn-primary btn-block" type="submit">Add Course</button>

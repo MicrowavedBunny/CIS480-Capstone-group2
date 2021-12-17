@@ -7,7 +7,8 @@ let CourseSchema = new Schema({
     description: { type: String },
     credits: {type: Number},
     type: { type: String },
-    cap: { type: Number }
+    cap: { type: Number },
+    owner: {type: String}
 }, {
     collection: 'courses'
 });
