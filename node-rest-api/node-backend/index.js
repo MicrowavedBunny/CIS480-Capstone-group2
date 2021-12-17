@@ -18,7 +18,7 @@ mongoose.connect(mongoDb.db, {
   }
 )
  
-const censusRoute = require('./routes/census.routes')
+const courseRoute = require('./routes/course.routes')
 const StudentsRoute = require('./routes/students.routes')
 
  
@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'dist/angular-mean-crud-tutorial')))
  
  
 // API root
-app.use('/api', censusRoute)
+app.use('/api', courseRoute)
 app.use('/api', StudentsRoute)
  
 // PORT

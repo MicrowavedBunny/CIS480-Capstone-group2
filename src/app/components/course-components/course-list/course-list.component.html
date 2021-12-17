@@ -1,6 +1,6 @@
 <div class="container">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-      <h2 class="h2">Census List</h2>
+      <h2 class="h2">Course List</h2>
     </div>
    
     <div class="table-responsive">
@@ -18,21 +18,21 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let census of Census; let i = index">
-            <th scope="row">{{census.census_year}}</th>
-            <td>{{census.address}}</td>
-            <td>{{census.city}}</td>
-            <td>{{census.state}}</td>
-            <td>{{census.zip}}</td>
-            <td>{{census.resident_count}}
+          <tr *ngFor="let course of Course; let i = index">
+            <th scope="row">{{course.course_year}}</th>
+            <td>{{course.address}}</td>
+            <td>{{course.city}}</td>
+            <td>{{course.state}}</td>
+            <td>{{course.zip}}</td>
+            <td>{{course.resident_count}}
             <td class="text-center">
               <button class="btn btn-sm btn-primary"
-                routerLink="/edit-census/{{census._id}}">Edit
+                routerLink="/edit-course/{{course._id}}">Edit
                 </button>
             </td>
             <td class="text-center">
               <button class="btn btn-sm btn-primary"
-                routerLink="/remove-census/{{census._id}}">Delete...
+                routerLink="/remove-course/{{course._id}}">Delete...
                 </button>
             </td>
           </tr>

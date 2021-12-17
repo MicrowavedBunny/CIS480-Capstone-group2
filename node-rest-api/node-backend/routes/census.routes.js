@@ -1,12 +1,12 @@
 const express = require('express');
 const app = express();
  
-const censusRoute = express.Router();
-let Census = require('../model/Census');
+const courseRoute = express.Router();
+let Course = require('../model/Course');
  
-// Get all Census
-censusRoute.route('/').get((req, res) => {
-    Census.find((error, data) => {
+// Get all Course
+courseRoute.route('/').get((req, res) => {
+    Course.find((error, data) => {
     if (error) {
       return next(error)
     } else {
@@ -15,9 +15,9 @@ censusRoute.route('/').get((req, res) => {
   })
 })
  
-// Get Census
-censusRoute.route('/read-census/:id').get((req, res) => {
-  Census.findById(req.params.id, (error, data) => {
+// Get Course
+courseRoute.route('/read-course/:id').get((req, res) => {
+  Course.findById(req.params.id, (error, data) => {
     if (error) {
       return next(error)
     } else {
@@ -26,9 +26,9 @@ censusRoute.route('/read-census/:id').get((req, res) => {
   })
 })
 
-//Update Census
-censusRoute.route('/update-census/:id').put((req, res, next) => {
-  Census.findByIdAndUpdate(req.params.id, {
+//Update Course
+courseRoute.route('/update-course/:id').put((req, res, next) => {
+  Course.findByIdAndUpdate(req.params.id, {
     $set: req.body
   }, (error, data) => {
     if (error) {
@@ -36,14 +36,14 @@ censusRoute.route('/update-census/:id').put((req, res, next) => {
       console.log(error)
     } else {
       res.json(data)
-      console.log('Census updated successfully!')
+      console.log('Course updated successfully!')
     }
   })
 })
 
-//Add a census
-censusRoute.route('/add-census').post((req, res, next) => {
-  Census.create(req.body, (error, data) => {
+//Add a course
+courseRoute.route('/add-course').post((req, res, next) => {
+  Course.create(req.body, (error, data) => {
     if (error) {
       return next(error)
     } else {
@@ -52,16 +52,16 @@ censusRoute.route('/add-census').post((req, res, next) => {
   })
 });
 
-//Remove a census
-censusRoute.route('/remove-census/:id').delete((req, res, next) => {
-  Census.findByIdAndDelete(req.params.id, (error, data) => {
+//Remove a course
+courseRoute.route('/remove-course/:id').delete((req, res, next) => {
+  Course.findByIdAndDelete(req.params.id, (error, data) => {
     if (error) {
       return next(error)
     } else {
       res.json(data)
-      console.log('Census successfully deleted.')
+      console.log('Course successfully deleted.')
     }
   })
 })
 
-module.exports = censusRoute;
+module.exports = courseRoute;

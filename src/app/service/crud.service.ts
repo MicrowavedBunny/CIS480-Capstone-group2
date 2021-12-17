@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Census } from './Census';
+import { Course } from './course';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
@@ -18,14 +18,14 @@ export class CrudService {
  
   constructor(private httpClient: HttpClient) { }
  
-  // Get all census
-  GetAllCensus() {
+  // Get all course
+  GetAllCourse() {
     return this.httpClient.get(`${this.REST_API}`);
   }
  
-  //Get a single census
-  GetCensus(id: any): Observable<any> {
-    let API_URL = `${this.REST_API}/read-census/${id}`;
+  //Get a single course
+  GetCourse(id: any): Observable<any> {
+    let API_URL = `${this.REST_API}/read-course/${id}`;
     return this.httpClient.get(API_URL, { headers: this.httpHeaders})
       .pipe(map((res: any) => {
         return res || {}
@@ -35,8 +35,8 @@ export class CrudService {
   }
 
   // Update
-  updateCensus(id: any, data: any): Observable<any> {
-    let API_URL = `${this.REST_API}/update-census/${id}`;
+  updateCourse(id: any, data: any): Observable<any> {
+    let API_URL = `${this.REST_API}/update-course/${id}`;
     return this.httpClient.put(API_URL, data, { headers: this.httpHeaders})
       .pipe(
         catchError(this.handleError)
@@ -44,8 +44,8 @@ export class CrudService {
   }
 
   //Add
-  AddCensus(data: Census): Observable<any> {
-    let API_URL = `${this.REST_API}/add-census`;
+  AddCourse(data: Course): Observable<any> {
+    let API_URL = `${this.REST_API}/add-course`;
     return this.httpClient.post(API_URL, data)
       .pipe(
         catchError(this.handleError)
@@ -53,8 +53,8 @@ export class CrudService {
   }
 
 //Delete
-  RemoveCensus(id: any): Observable<any> {
-    let API_URL = `${this.REST_API}/remove-census/${id}`;
+  RemoveCourse(id: any): Observable<any> {
+    let API_URL = `${this.REST_API}/remove-course/${id}`;
     return this.httpClient.delete(API_URL, {headers: this.httpHeaders})
       .pipe(map((res: any) => {
         return res || {}

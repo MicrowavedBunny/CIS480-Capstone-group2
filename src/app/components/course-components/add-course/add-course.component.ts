@@ -4,14 +4,14 @@ import { CrudService } from 'src/app/service/crud.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
-  selector: 'app-add-census',
-  templateUrl: './add-census.component.html',
-  styleUrls: ['./add-census.component.css']
+  selector: 'app-add-course',
+  templateUrl: './add-course.component.html',
+  styleUrls: ['./add-course.component.css']
 })
 
-export class AddCensusComponent implements OnInit {
+export class AddCourseComponent implements OnInit {
 
-  censusForm: FormGroup;
+  courseForm: FormGroup;
 
   constructor(
     public formBuilder: FormBuilder,
@@ -19,13 +19,13 @@ export class AddCensusComponent implements OnInit {
     private ngZone: NgZone,
     private crudService: CrudService
   ) {
-    this.censusForm = this.formBuilder.group({
+    this.courseForm = this.formBuilder.group({
       address: [''],
       city: [''],
       state: [''],
       zip: [''],
       resident_count: [''],
-      census_year: [''],
+      course_year: [''],
       assessor: ['']
     })
    }
@@ -33,10 +33,10 @@ export class AddCensusComponent implements OnInit {
   ngOnInit(): void {  }
 
   onSubmit(): any {
-    this.crudService.AddCensus(this.censusForm.value)
+    this.crudService.AddCourse(this.courseForm.value)
       .subscribe(() => {
         console.log('Data added successfully')
-        this.ngZone.run(() => this.router.navigateByUrl('/census-list'))
+        this.ngZone.run(() => this.router.navigateByUrl('/course-list'))
       }, (err) => {
         console.log(err);
       });

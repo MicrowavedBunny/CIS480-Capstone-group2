@@ -4,11 +4,11 @@ import { CrudService } from 'src/app/service/crud.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-remove-census',
-  templateUrl: './remove-census.component.html',
-  //styleUrls: ['./remove-census.component.css']
+  selector: 'app-remove-course',
+  templateUrl: './remove-course.component.html',
+  //styleUrls: ['./remove-course.component.css']
 })
-export class RemoveCensusComponent implements OnInit {
+export class RemoveCourseComponent implements OnInit {
 
   getId: any;
   deleteForm: FormGroup;
@@ -29,11 +29,11 @@ export class RemoveCensusComponent implements OnInit {
       state: [''],
       zip: [''],
       resident_count: [''],
-      census_year: [''],
+      course_year: [''],
       assessor: ['']
     });
 
-    this.crudService.GetCensus(this.getId).subscribe(res => {
+    this.crudService.GetCourse(this.getId).subscribe(res => {
       this.deleteForm.setValue({
         id: res['_id'],
         address: res['address'],
@@ -41,22 +41,22 @@ export class RemoveCensusComponent implements OnInit {
         state: res['state'],
         zip: res['zip'],
         resident_count: res['resident_count'],
-        census_year: res['census_year'],
+        course_year: res['course_year'],
         assessor: res['assessor']
       });
     });
 
-    this.crudService.RemoveCensus(this.getId)
+    this.crudService.RemoveCourse(this.getId)
    }
 
   ngOnInit(): void { }
 
   onDelete(): any {
-    //call the method to actually remove the census
-    this.crudService.RemoveCensus(this.getId)
+    //call the method to actually remove the course
+    this.crudService.RemoveCourse(this.getId)
       .subscribe(() =>{
-        //send the user back to the list of census
-        this.ngZone.run(() => this.router.navigateByUrl('census-list'))
+        //send the user back to the list of course
+        this.ngZone.run(() => this.router.navigateByUrl('course-list'))
       }, (err) => {
         console.log(err)
       })

@@ -4,12 +4,12 @@ import { CrudService } from '../../../service/crud.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
-  selector: 'app-census-detail',
-  templateUrl: './census-detail.component.html',
-  //styleUrls: ['./census-detail.component.css']
+  selector: 'app-course-detail',
+  templateUrl: './course-detail.component.html',
+  //styleUrls: ['./course-detail.component.css']
 })
 
-export class CensusDetailComponent implements OnInit {
+export class CourseDetailComponent implements OnInit {
 
   getId: any;
   updateForm: FormGroup;
@@ -23,14 +23,14 @@ export class CensusDetailComponent implements OnInit {
   ) {
     this.getId = this.activatedRoute.snapshot.paramMap.get('id');
 
-    this.crudService.GetCensus(this.getId).subscribe(res => {
+    this.crudService.GetCourse(this.getId).subscribe(res => {
       this.updateForm.setValue({
         address: res['address'],
         city: res['city'],
         state: res['state'],
         zip: res['zip'],
         resident_count: res['resident_count'],
-        census_year: res['census_year'],
+        course_year: res['course_year'],
         assessor: res['assessor']
       });
     });
@@ -41,7 +41,7 @@ export class CensusDetailComponent implements OnInit {
       state: [''],
       zip: [''],
       resident_count: [''],
-      census_year: [''],
+      course_year: [''],
       assessor: ['']
     });
    }
@@ -49,10 +49,10 @@ export class CensusDetailComponent implements OnInit {
   ngOnInit() { }
 
   onUpdate(): any {
-    this.crudService.updateCensus(this.getId, this.updateForm.value)
+    this.crudService.updateCourse(this.getId, this.updateForm.value)
       .subscribe(() => {
         console.log('Data updated successfully!')
-        this.ngZone.run(() => this.router.navigateByUrl('census-list'))
+        this.ngZone.run(() => this.router.navigateByUrl('course-list'))
       }, (err) => {
         console.log(err);
       });
