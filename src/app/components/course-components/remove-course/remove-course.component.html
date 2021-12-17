@@ -2,32 +2,28 @@
     <div class="col-md-4">
         <form [formGroup]="deleteForm" (ngSubmit)="onDelete()">
             <div class="form-group">
-                <label>Address</label>
-                <input class="form-control" type="text" formControlName="address" required readonly>
+                <label>name</label>
+                <input class="form-control" type="text" formControlName="name" required>
             </div>
             <div class="form-group">
-                <label>City</label>
-                <input class="form-control" type="text" formControlName="city" required readonly>
+                <label>code</label>
+                <input class="form-control" type="text" formControlName="code" required>
             </div>
             <div class="form-group">
-                <label>State</label>
-                <input class="form-control" type="text" formControlName="state" required readonly>
+                <label>description</label>
+                <input class="form-control" type="text" formControlName="description" required>
             </div>
             <div class="form-group">
-                <label>ZIP</label>
-                <input class="form-control" type="text" formControlName="zip" required readonly>
+                <label>credits</label>
+                <input class="form-control" type="number" formControlName="credits" required>
             </div>
             <div class="form-group">
-                <label>Number of People at Address</label>
-                <input class="form-control" type="text" formControlName="resident_count" required readonly>
+                <label>type</label>
+                <input class="form-control" type="text" formControlName="type" required>
             </div>
             <div class="form-group">
-                <label>Year</label>
-                <input class="form-control" type="text" formControlName="course_year" required readonly>
-            </div>
-            <div class="form-group">
-                <label>Course Taker</label>
-                <input class="form-control" type="text" formControlName="assessor" required readonly>
+                <label>cap</label>
+                <input class="form-control" type="number" formControlName="cap" required>
             </div>
             <div class="form-group">
                 <button class="btn btn-primary btn-block" type="submit">Remove Course</button>

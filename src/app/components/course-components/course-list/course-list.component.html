@@ -7,24 +7,24 @@
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th scope="col">Year</th>
-            <th scope="col">Address</th>
-            <th scope="col">City</th>
-            <th scope="col">State</th>
-            <th scope="col">ZIP</th>
-            <th scope="col"># of People</th>
+            <th scope="col">name</th>
+            <th scope="col">code</th>
+            <th scope="col">description</th>
+            <th scope="col">credits</th>
+            <th scope="col">type</th>
+            <th scope="col">cap</th>
             <th class="text-center" scope="col">Update</th>
             <th class="text-center" scope="col">Remove</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let course of Course; let i = index">
-            <th scope="row">{{course.course_year}}</th>
-            <td>{{course.address}}</td>
-            <td>{{course.city}}</td>
-            <td>{{course.state}}</td>
-            <td>{{course.zip}}</td>
-            <td>{{course.resident_count}}
+            <th scope="row">{{course.name}}</th>
+            <td>{{course.code}}</td>
+            <td>{{course.description}}</td>
+            <td>{{course.credits}}</td>
+            <td>{{course.type}}</td>
+            <td>{{course.cap}}
             <td class="text-center">
               <button class="btn btn-sm btn-primary"
                 routerLink="/edit-course/{{course._id}}">Edit

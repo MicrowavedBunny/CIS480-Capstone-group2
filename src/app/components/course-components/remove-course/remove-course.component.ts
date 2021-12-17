@@ -24,25 +24,23 @@ export class RemoveCourseComponent implements OnInit {
 
     this.deleteForm = this.formBuilder.group({
       id: [''],
-      address: [''],
-      city: [''],
-      state: [''],
-      zip: [''],
-      resident_count: [''],
-      course_year: [''],
-      assessor: ['']
+      name: [''],
+      code: [''],
+      description: [''],
+      credits: [''],
+      type: [''],
+      cap: ['']
     });
 
     this.crudService.GetCourse(this.getId).subscribe(res => {
       this.deleteForm.setValue({
         id: res['_id'],
-        address: res['address'],
-        city: res['city'],
-        state: res['state'],
-        zip: res['zip'],
-        resident_count: res['resident_count'],
-        course_year: res['course_year'],
-        assessor: res['assessor']
+        name: res['name'],
+        code: res['code'],
+        description: res['description'],
+        credits: res['credits'],
+        type: res['type'],
+        cap: res['cap']
       });
     });
 

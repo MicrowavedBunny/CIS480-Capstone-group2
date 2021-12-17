@@ -20,13 +20,12 @@ export class AddCourseComponent implements OnInit {
     private crudService: CrudService
   ) {
     this.courseForm = this.formBuilder.group({
-      address: [''],
-      city: [''],
-      state: [''],
-      zip: [''],
-      resident_count: [''],
-      course_year: [''],
-      assessor: ['']
+      name: [''],
+      code: [''],
+      description: [''],
+      credits: [''],
+      type: [''],
+      cap: ['']
     })
    }
 

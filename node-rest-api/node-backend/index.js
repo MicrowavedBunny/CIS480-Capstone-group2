@@ -18,7 +18,7 @@ mongoose.connect(mongoDb.db, {
   }
 )
  
-const courseRoute = require('./routes/course.routes')
+const courseRoute = require('./routes/courses.routes')
 const StudentsRoute = require('./routes/students.routes')
 
  
