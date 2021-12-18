@@ -1,0 +1,14 @@
+div#buttonHolder{
+  text-align: center;
+}
+
+form#LoginForm{
+position: absolute;
+}
+
+form#registerForm{
+  margin-top: 200px;
+  margin-left: 50px;
+  position: relative;
+
+}
