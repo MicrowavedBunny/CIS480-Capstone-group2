@@ -1,6 +1,9 @@
 export class Student {
     _id!: String;
-    name!: String;
-    password!: String;
+    firstName!: String;
+    lastName!: String;
     email!: String;
+    userName!: String;
+    password!: String;
+    
 }

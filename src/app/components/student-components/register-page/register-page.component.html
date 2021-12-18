@@ -1,1 +1,30 @@
-<p>register-page works!</p>
+<a class="navbar-brand">Register Account</a>
+<div class="row justify-content-center mt-5">
+    <div class="col-md-4">
+        <form [formGroup]="registerAccForm" (ngSubmit)="onRegister()">
+            <div class="form-group">
+                <label>firstName</label>
+                <input class="form-control" type="text" formControlName="firstName" required>
+            </div>
+            <div class="form-group">
+                <label>lastName</label>
+                <input class="form-control" type="text" formControlName="lastName" required>
+            </div>
+            <div class="form-group">
+                <label>email</label>
+                <input class="form-control" type="text" formControlName="email" required>
+            </div>
+            <div class="form-group">
+                <label>password</label>
+                <input class="form-control" type="text" formControlName="password" required>
+            </div>
+            <div class="form-group">
+                <label>userName</label>
+                <input class="form-control" type="text" formControlName="userName" required>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit">Register Account</button>
+            </div>
+        </form>
+    </div>
+</div>

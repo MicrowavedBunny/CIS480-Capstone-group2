@@ -42,7 +42,7 @@ studentsRoute.route('/update-student/:id').put((req, res, next) => {
 })
 
 //Add a student
-studentsRoute.route('/add-student').post((req, res, next) => {
+studentsRoute.route('/register-page').post((req, res, next) => {
   Student.create(req.body, (error, data) => {
     if (error) {
       return next(error)

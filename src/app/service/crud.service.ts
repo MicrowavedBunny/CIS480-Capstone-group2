@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Course } from './course';
-import { Student } from './student';
+import { Course } from './Course';
+import { Student } from './Student';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
@@ -44,7 +44,7 @@ export class CrudService {
       )
   }
 
-  //Add
+  //Add course
   AddCourse(data: Course): Observable<any> {
     let API_URL = `${this.REST_API}/add-course`;
     return this.httpClient.post(API_URL, data)
@@ -63,6 +63,15 @@ export class CrudService {
         catchError(this.handleError)
       )
   }
+
+    //Add student
+    AddStudent(data: Student): Observable<any> {
+      let API_URL = `${this.REST_API}/register-page`;
+      return this.httpClient.post(API_URL, data)
+        .pipe(
+          catchError(this.handleError)
+        )
+    }
 
   // Error 
   handleError(error: HttpErrorResponse) {
