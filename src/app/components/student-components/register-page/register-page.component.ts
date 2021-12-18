@@ -34,7 +34,7 @@ export class RegisterPageComponent implements OnInit {
     this.crudService.AddStudent(this.registerAccForm.value)
       .subscribe(() => {
         console.log('Data added successfully')
-        this.ngZone.run(() => this.router.navigateByUrl('/course-list'))
+        this.ngZone.run(() => this.router.navigateByUrl('/add-course'))
       }, (err) => {
         console.log(err);
       });
