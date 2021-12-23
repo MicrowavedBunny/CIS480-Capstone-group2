@@ -11,8 +11,7 @@ let StudentsSchema = new Schema({
         unique: true,
         required: 'Email address is required',
     },
-    password: { type: String },
-    userName: { type: String }
+    password: { type: String }
 }, {
     collection: 'Students'
 });
