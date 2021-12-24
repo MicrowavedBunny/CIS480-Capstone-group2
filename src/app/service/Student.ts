@@ -3,7 +3,5 @@ export class Student {
     firstName!: String;
     lastName!: String;
     email!: String;
-    userName!: String;
-    password!: String;
-    
+    password!: String; 
 }

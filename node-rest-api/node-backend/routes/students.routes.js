@@ -2,31 +2,36 @@ const express = require('express');
 const app = express();
  
 const studentsRoute = express.Router();
-let Student = require('../model/Student');
+const Student = require('../model/Student');
  
 // Get all Student
-studentsRoute.route('/').get((req, res) => {
-    Student.find((error, data) => {
-    if (error) {
-      return next(error)
-    } else {
-      res.json(data)
+studentsRoute.get('/login-page', function(req, res){
+  console.log('get request for students');
+    Student.find({})
+    .exec(function(error, data){ 
+        if (error) {
+            console.log('error retreving students');
+        } else {
+          res.json(data);
     }
-  })
-})
+  });
+});
  
-// Get Student
-studentsRoute.route('/read-student/:id').get((req, res) => {
-  Student.findById(req.params.id, (error, data) => {
-    if (error) {
-      return next(error)
-    } else {
-      res.json(data)
+//Get Student
+studentsRoute.get('/login-page/:id', function(req, res){
+  console.log('get request for single student');
+    Student.findById(req.params.id)
+    .exec(function(error, data){ 
+        if (error) {
+            console.log('error retreving single student');
+        } else {
+          res.json(data);
     }
-  })
-})
+  });
+});
 
-//Update Student
+
+/*Update Student
 studentsRoute.route('/update-student/:id').put((req, res, next) => {
   Student.findByIdAndUpdate(req.params.id, {
     $set: req.body
@@ -40,6 +45,7 @@ studentsRoute.route('/update-student/:id').put((req, res, next) => {
     }
   })
 })
+*/
 
 //Add a student
 studentsRoute.route('/register-page').post((req, res, next) => {
@@ -52,7 +58,7 @@ studentsRoute.route('/register-page').post((req, res, next) => {
   })
 });
 
-//Remove a student
+/*Remove a student
 studentsRoute.route('/remove-student/:id').delete((req, res, next) => {
   Student.findByIdAndDelete(req.params.id, (error, data) => {
     if (error) {
@@ -63,5 +69,5 @@ studentsRoute.route('/remove-student/:id').delete((req, res, next) => {
     }
   })
 })
-
+*/
 module.exports = studentsRoute;

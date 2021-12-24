@@ -73,6 +73,16 @@ export class CrudService {
         )
     }
 
+    GetCredintials(): Observable<any> {
+      let API_URL = `${this.REST_API}/login-page`;
+      return this.httpClient.get(API_URL, { headers: this.httpHeaders})
+        .pipe(map((res: any) => {
+          return res || {}
+        }),
+          catchError(this.handleError)
+        )
+    }
+
   // Error 
   handleError(error: HttpErrorResponse) {
     let errorMessage = '';

@@ -12,6 +12,7 @@ export class LoginPageComponent implements OnInit {
 
   loginForm: FormGroup;
   register: FormGroup;
+  Student:any = [];
 
   constructor(    
     public formBuilder: FormBuilder,
@@ -26,10 +27,41 @@ export class LoginPageComponent implements OnInit {
       Password: ['']
     })
   }
-  ngOnInit(): void { }
+  ngOnInit(): void {
+
+    this.crudService.GetCredintials().subscribe(res => {
+      console.log(res)
+      this.Student =res;
+    }); 
+
+   }
 
   onLogin(): any { 
-this.ngZone.run(() => this.router.navigateByUrl('/course-list'))
+    var emailInput = (<HTMLInputElement>document.getElementById('emailInput')).value;
+    var passInput = (<HTMLInputElement>document.getElementById('passInput')).value;
+
+    
+    for (let i = 0; i < this.Student.length; i++){
+
+      if(emailInput == this.Student[i].email){
+        console.log('email success');
+      }else{
+        console.log('email fail');
+      }
+
+      if(passInput == this.Student[i].password){
+        console.log('pasword success');
+      }else{
+        console.log('password fail');
+      }
+
+
+      //console.log(console.log(this.Student[i].email));
+    }
+
+    //console.log(this.Student[0].email);
+
+//this.ngZone.run(() => this.router.navigateByUrl('/course-list'))
 }  
 onRegisterClick(): any { 
 this.ngZone.run(() => this.router.navigateByUrl('/register-page'))
