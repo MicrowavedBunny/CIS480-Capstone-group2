@@ -14,6 +14,18 @@ courseRoute.route('/').get((req, res) => {
     }
   })
 })
+
+//get course by owner
+courseRoute.route('/read-course/:owner').get((req, res) => {
+  Course.find({ "owner": req.params.owner},(error, data) => {
+  if (error) {
+    return next(error)
+  } else {
+    res.json(data)
+  }
+})
+})
+
  
 // Get Course
 courseRoute.route('/read-course/:id').get((req, res) => {

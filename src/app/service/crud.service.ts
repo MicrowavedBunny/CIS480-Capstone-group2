@@ -35,6 +35,18 @@ export class CrudService {
       )
   }
 
+  getCourseByOwner(owner: any): Observable<any> {
+    let API_URL = `${this.REST_API}/read-course/${owner}`;
+    return this.httpClient.get(API_URL, { headers: this.httpHeaders})
+      .pipe(map((res: any) => {
+        return res || {}
+      }),
+        catchError(this.handleError)
+      )
+  }
+
+
+
   // Update
   updateCourse(id: any, data: any): Observable<any> {
     let API_URL = `${this.REST_API}/update-course/${id}`;
@@ -82,6 +94,9 @@ export class CrudService {
           catchError(this.handleError)
         )
     }
+
+
+
 
   // Error 
   handleError(error: HttpErrorResponse) {
