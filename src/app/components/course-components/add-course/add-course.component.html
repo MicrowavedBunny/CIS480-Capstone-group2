@@ -3,8 +3,83 @@
     <div class="col-md-4">
         <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
-                <label>name</label>
-                <input class="form-control" type="text" formControlName="name" required>
+                <label>Date</label>
+                <a> 01/10/2022 - 05/09/2022</a>
+                <a> Class</a>
+                <a>
+                    <select formControlName="name" id="id1">
+                        <option value="Intro to Programming">Intro to Programming</option>
+                        <option value="name"> m</option>
+                    </select>
+                <!--<div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">▼</button>
+                    <div id="myDropdown" class="dropdown-content">
+                      <a>Intro to Programming</a>
+                    </div>
+                </div>
+                -->
+                </a>
+                <a> Credit Hours</a>
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">▼</button>
+                    <div id="myDropdown" class="dropdown-content">
+                      <a href="">3</a>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>code</label>
+                <input class="form-control" type="text" formControlName="code" required>
+            </div>
+            <div class="form-group">
+                <label>description</label>
+                <input class="form-control" type="text" formControlName="description" required>
+            </div>
+            <div class="form-group">
+                <label>credits</label>
+                <input class="form-control" type="number" formControlName="credits" required>
+            </div>
+            <div class="form-group">
+                <label>type</label>
+                <input class="form-control" type="text" formControlName="type" required>
+            </div>
+            <div class="form-group">
+                <label>cap</label>
+                <input class="form-control" type="number" formControlName="cap" required>
+            </div>
+            
+            <div class="form-group">
+                <input class="form-control" type="hidden" formControlName="owner" required>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit">Add Course</button>
+            </div>
+        </form>
+                <form [formGroup]="courseForm2" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label>Date</label>
+                <a> 01/10/2022 - 05/09/2022</a>
+                <a> Class</a>
+                <a>
+                    <select formControlName="name" id="id1">
+                        <option value="Intro to Programming">Intro to Programming</option>
+                        <option value="name"> m</option>
+                    </select>
+                <!--<div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">▼</button>
+                    <div id="myDropdown" class="dropdown-content">
+                      <a>Intro to Programming</a>
+                    </div>
+                </div>
+                -->
+                </a>
+                <a> Credit Hours</a>
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">▼</button>
+                    <div id="myDropdown" class="dropdown-content">
+                      <a href="">3</a>
+                    </div>
+                </div>
             </div>
             <div class="form-group">
                 <label>code</label>
