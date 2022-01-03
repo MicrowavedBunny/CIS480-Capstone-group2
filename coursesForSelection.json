@@ -1,0 +1,100 @@
+[{
+  "_id": {
+    "$oid": "61bd2e93dc0fbdb04d97d155"
+  },
+  "name": "Intro to Programming",
+  "code": "CIS 101",
+  "description": "First steps to learning how to create logic for basic programs",
+  "credits": 3,
+  "type": "Computer Science",
+  "cap": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3100dc0fbdb04d97d156"
+  },
+  "name": "College Algerbra",
+  "code": "MTH 101",
+  "description": "College Algerbra",
+  "credits": 3,
+  "type": "Math",
+  "cap": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d157"
+  },
+  "name": "College English",
+  "code": "ENG 101",
+  "description": "College English",
+  "credits": 3,
+  "type": "English",
+  "cap": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d158"
+  },
+  "name": "Biology I",
+  "code": "SCI 108",
+  "description": "Biology",
+  "credits": 3,
+  "type": "Science",
+  "cap": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d159"
+  },
+  "name": "Intro to Psychology",
+  "code": " PSYCH 111",
+  "description": "Introduction to psychology learning basic priciples of the human mind",
+  "credits": 3,
+  "type": "Social Science",
+  "cap": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d160"
+  },
+  "name": "Intro to Sociology",
+  "code": " SOC 101",
+  "description": "Introduction to sociology focusing on society and human behavior",
+  "credits": 3,
+  "type": "Social Science",
+  "cap": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d161"
+  },
+  "name": "Business Math",
+  "code": " MTH 105",
+  "description": "Mathmatics that are used to balance workbooks and other business accounts",
+  "credits": 3,
+  "type": "Math",
+  "cap": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d162"
+  },
+  "name": "JavaScript Applications",
+  "code": " CIS 158",
+  "description": "Introducing JavaScript and the many ways you can use it for webpages and web applications",
+  "credits": 3,
+  "type": "Computer Science",
+  "cap": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d163"
+  },
+  "name": "Mobile App Development",
+  "code": " CIS 327",
+  "description": "Introducing Mobile development through Android Studio",
+  "credits": 3,
+  "type": "Computer Science",
+  "cap": 20,
+  "__v": 0
+}]
