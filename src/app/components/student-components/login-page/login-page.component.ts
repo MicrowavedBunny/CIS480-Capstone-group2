@@ -53,7 +53,8 @@ export class LoginPageComponent implements OnInit {
           //get the id
           console.log(this.Student[i]._id);
           this.studentId = this.Student[i]._id;
-
+          localStorage.setItem("studentId", this.Student[i]._id);
+          
           this.ngZone.run(() => this.router.navigateByUrl('/course-list'))
         } else {
           console.log('password fail');

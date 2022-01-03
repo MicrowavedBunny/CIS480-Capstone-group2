@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Student } from 'src/app/service/Student';
 import { CrudService } from '../../../service/crud.service';
 import { LoginPageComponent } from '../../student-components/login-page/login-page.component';
 
@@ -12,7 +13,7 @@ export class CourseListComponent implements OnInit {
   Course:any = [];
  ////this needs to be passed from LoginPageComponent and it will work
  ////for now just using a place holder
-  studentId: any = "61bd099d595d8c5bce7a325e"; 
+ studentId: any = localStorage.getItem("studentId"); //"61bd099d595d8c5bce7a325e"; 
 
   constructor(private crudService: CrudService) { }
  
