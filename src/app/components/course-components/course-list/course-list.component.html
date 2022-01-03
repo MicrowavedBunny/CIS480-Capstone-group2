@@ -32,9 +32,11 @@
                 </button>
             </td>
             <td class="text-center">
-              <button class="btn btn-sm btn-primary"
-                routerLink="/remove-course/{{course._id}}">Delete...
-                </button>
+              <form style="position: relative;border-width: 0px;border-radius: 0px;padding: 0px;border-color:white;background-color: white;"
+               (ngSubmit)="onDelete(ref)">
+                <input #ref type="hidden" id="courseId" value={{course._id}}>
+                <button class="btn btn-sm btn-primary" type="submit" >Delete...</button>
+              </form>
             </td>
           </tr>
         </tbody>

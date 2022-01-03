@@ -30,7 +30,8 @@ export class CourseDetailComponent implements OnInit {
         description: res['description'],
         credits: res['credits'],
         type: res['type'],
-        cap: res['cap']
+        cap: res['cap'],
+        owner: res['owner']
       });
     });
 
@@ -40,11 +41,16 @@ export class CourseDetailComponent implements OnInit {
       description: [''],
       credits: [''],
       type: [''],
-      cap: ['']
+      cap: [''],
+      owner: ['']
     });
    }
 
-  ngOnInit() { }
+  ngOnInit() { 
+
+    console.log(this.getId);
+
+  }
 
   onUpdate(): any {
     this.crudService.updateCourse(this.getId, this.updateForm.value)
