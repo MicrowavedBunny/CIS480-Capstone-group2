@@ -11,6 +11,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 
 export class AddCourseComponent implements OnInit {
 
+  //forms
   courseForm: FormGroup;
   courseForm2: FormGroup;
   courseForm3: FormGroup;
@@ -50,10 +51,37 @@ export class AddCourseComponent implements OnInit {
     })
    }
 
-  ngOnInit(): void {  }
-
+  ngOnInit(): void {
+   }
   
   onSubmit(): any {
+
+
+    //set data for form 1
+    this.courseForm3.controls['name'].setValue((<HTMLInputElement>document.getElementById('select1')).textContent);
+    this.courseForm3.controls['credits'].setValue((<HTMLInputElement>document.getElementById('credits1')).textContent);
+    this.courseForm3.controls['code'].setValue((<HTMLInputElement>document.getElementById('code1')).textContent);
+    this.courseForm3.controls['description'].setValue((<HTMLInputElement>document.getElementById('description1')).textContent);
+    this.courseForm3.controls['type'].setValue((<HTMLInputElement>document.getElementById('type1')).textContent);
+    this.courseForm3.controls['cap'].setValue((<HTMLInputElement>document.getElementById('cap1')).textContent);
+    //set data for form 2
+    this.courseForm3.controls['name'].setValue((<HTMLInputElement>document.getElementById('select2')).textContent);
+    this.courseForm3.controls['credits'].setValue((<HTMLInputElement>document.getElementById('credits2')).textContent);
+    this.courseForm3.controls['code'].setValue((<HTMLInputElement>document.getElementById('code2')).textContent);
+    this.courseForm3.controls['description'].setValue((<HTMLInputElement>document.getElementById('description2')).textContent);
+    this.courseForm3.controls['type'].setValue((<HTMLInputElement>document.getElementById('type2')).textContent);
+    this.courseForm3.controls['cap'].setValue((<HTMLInputElement>document.getElementById('cap2')).textContent);
+    //set data for form 3
+    this.courseForm3.controls['name'].setValue((<HTMLInputElement>document.getElementById('select3')).textContent);
+    this.courseForm3.controls['credits'].setValue((<HTMLInputElement>document.getElementById('credits3')).textContent);
+    this.courseForm3.controls['code'].setValue((<HTMLInputElement>document.getElementById('code3')).textContent);
+    this.courseForm3.controls['description'].setValue((<HTMLInputElement>document.getElementById('description3')).textContent);
+    this.courseForm3.controls['type'].setValue((<HTMLInputElement>document.getElementById('type3')).textContent);
+    this.courseForm3.controls['cap'].setValue((<HTMLInputElement>document.getElementById('cap3')).textContent);
+
+
+
+    //collect and add data to db
     this.crudService.AddCourse(this.courseForm.value)
       .subscribe(() => {
         console.log('Data added successfully')
