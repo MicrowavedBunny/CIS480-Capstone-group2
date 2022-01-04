@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "61bd0050595d8c5bce7a3256"
+  },
+  "firstName": "Cody",
+  "lastName": "Biggs",
+  "email": "codbig9219@students.ecpi.edu",
+  "password": "Passw0rd1",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd04e3595d8c5bce7a3258"
+  },
+  "firstName": "Jacob",
+  "lastName": "Davidson",
+  "email": "jacdav2173@students.ecpi.edu",
+  "password": "Passw0rd1",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd099d595d8c5bce7a325e"
+  },
+  "firstName": "Jacob",
+  "lastName": "Smith",
+  "email": "jacsmi7937@students.ecpi.edu",
+  "password": "Passw0rd1",
+  "__v": 0
+}]

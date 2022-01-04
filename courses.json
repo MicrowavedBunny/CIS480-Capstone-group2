@@ -1,0 +1,361 @@
+[{
+  "_id": {
+    "$oid": "61bd2e93dc0fbdb04d97d155"
+  },
+  "name": "Intro to Programming",
+  "code": "CIS 101",
+  "description": "First steps to learning how to create logic for basic programs",
+  "credits": 3,
+  "type": "Computer Science",
+  "cap": 20,
+  "owner": "61bd099d595d8c5bce7a325e",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3100dc0fbdb04d97d156"
+  },
+  "name": "College Algerbra",
+  "code": "MTH 101",
+  "description": "College Algerbra",
+  "credits": 3,
+  "type": "Math",
+  "cap": 20,
+  "owner": "61bd099d595d8c5bce7a325e",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d157"
+  },
+  "name": "College English",
+  "code": "ENG 101",
+  "description": "College English",
+  "credits": 3,
+  "type": "English",
+  "cap": 20,
+  "owner": "61bd099d595d8c5bce7a325e",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d158"
+  },
+  "name": "Biology I",
+  "code": "SCI 108",
+  "description": "Biology",
+  "credits": 3,
+  "type": "Science",
+  "cap": 20,
+  "owner": "61bd099d595d8c5bce7a325e",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d159"
+  },
+  "name": "Intro to Psychology",
+  "code": " PSYCH 111",
+  "description": "Introduction to psychology learning basic priciples of the human mind",
+  "credits": 3,
+  "type": "Social Science",
+  "cap": 20,
+  "owner": "61bd099d595d8c5bce7a325e",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d160"
+  },
+  "name": "Intro to Sociology",
+  "code": " SOC 101",
+  "description": "Introduction to sociology focusing on society and human behavior",
+  "credits": 3,
+  "type": "Social Science",
+  "cap": 20,
+  "owner": "61bd099d595d8c5bce7a325e",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d161"
+  },
+  "name": "Business Math",
+  "code": " MTH 105",
+  "description": "Mathmatics that are used to balance workbooks and other business accounts",
+  "credits": 3,
+  "type": "Math",
+  "cap": 20,
+  "owner": "61bd099d595d8c5bce7a325e",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d162"
+  },
+  "name": "JavaScript Applications",
+  "code": " CIS 158",
+  "description": "Introducing JavaScript and the many ways you can use it for webpages and web applications",
+  "credits": 3,
+  "type": "Computer Science",
+  "cap": 20,
+  "owner": "61bd099d595d8c5bce7a325e",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d163"
+  },
+  "name": "Mobile App Development",
+  "code": " CIS 327",
+  "description": "Introducing Mobile development through Android Studio",
+  "credits": 3,
+  "type": "Computer Science",
+  "cap": 20,
+  "owner": "61bd099d595d8c5bce7a325e",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d164"
+  },
+  "name": "ServerSide Scripting with PHP",
+  "code": " CIS 349",
+  "description": "Introduction to PHP with a MySQL database to store, edit and delete your data",
+  "credits": 3,
+  "type": "Computer Science",
+  "cap": 20,
+  "owner": "61bd099d595d8c5bce7a325e",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd2e93dc0fbdb04d97d165"
+  },
+  "name": "Intro to Programming",
+  "code": "CIS 101",
+  "description": "First steps to learning how to create logic for basic programs",
+  "credits": 3,
+  "type": "Computer Science",
+  "cap": 20,
+  "owner": "61bd0050595d8c5bce7a3256",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3100dc0fbdb04d97d166"
+  },
+  "name": "College Algerbra",
+  "code": "MTH 101",
+  "description": "College Algerbra",
+  "credits": 3,
+  "type": "Math",
+  "cap": 20,
+  "owner": "61bd0050595d8c5bce7a3256",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d167"
+  },
+  "name": "College English",
+  "code": "ENG 101",
+  "description": "College English",
+  "credits": 3,
+  "type": "English",
+  "cap": 20,
+  "owner": "61bd0050595d8c5bce7a3256",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d168"
+  },
+  "name": "Biology I",
+  "code": "SCI 108",
+  "description": "Biology",
+  "credits": 3,
+  "type": "Science",
+  "cap": 20,
+  "owner": "61bd0050595d8c5bce7a3256",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d169"
+  },
+  "name": "Intro to Psychology",
+  "code": " PSYCH 111",
+  "description": "Introduction to psychology learning basic priciples of the human mind",
+  "credits": 3,
+  "type": "Social Science",
+  "cap": 20,
+  "owner": "61bd0050595d8c5bce7a3256",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d170"
+  },
+  "name": "Intro to Sociology",
+  "code": " SOC 101",
+  "description": "Introduction to sociology focusing on society and human behavior",
+  "credits": 3,
+  "type": "Social Science",
+  "cap": 20,
+  "owner": "61bd0050595d8c5bce7a3256",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d171"
+  },
+  "name": "Business Math",
+  "code": " MTH 105",
+  "description": "Mathmatics that are used to balance workbooks and other business accounts",
+  "credits": 3,
+  "type": "Math",
+  "cap": 20,
+  "owner": "61bd0050595d8c5bce7a3256",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d172"
+  },
+  "name": "JavaScript Applications",
+  "code": " CIS 158",
+  "description": "Introducing JavaScript and the many ways you can use it for webpages and web applications",
+  "credits": 3,
+  "type": "Computer Science",
+  "cap": 20,
+  "owner": "61bd0050595d8c5bce7a3256",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d173"
+  },
+  "name": "Mobile App Development",
+  "code": " CIS 327",
+  "description": "Introducing Mobile development through Android Studio",
+  "credits": 3,
+  "type": "Computer Science",
+  "cap": 20,
+  "owner": "61bd0050595d8c5bce7a3256",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d174"
+  },
+  "name": "ServerSide Scripting with PHP",
+  "code": " CIS 349",
+  "description": "Introduction to PHP with a MySQL database to store, edit and delete your data",
+  "credits": 3,
+  "type": "Computer Science",
+  "cap": 20,
+  "owner": "61bd0050595d8c5bce7a3256",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd2e93dc0fbdb04d97d175"
+  },
+  "name": "Intro to Programming",
+  "code": "CIS 101",
+  "description": "First steps to learning how to create logic for basic programs",
+  "credits": 3,
+  "type": "Computer Science",
+  "cap": 20,
+  "owner": "61bd04e3595d8c5bce7a3258",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3100dc0fbdb04d97d176"
+  },
+  "name": "College Algerbra",
+  "code": "MTH 101",
+  "description": "College Algerbra",
+  "credits": 3,
+  "type": "Math",
+  "cap": 20,
+  "owner": "61bd04e3595d8c5bce7a3258",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d177"
+  },
+  "name": "College English",
+  "code": "ENG 101",
+  "description": "College English",
+  "credits": 3,
+  "type": "English",
+  "cap": 20,
+  "owner": "61bd04e3595d8c5bce7a3258",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d178"
+  },
+  "name": "Biology I",
+  "code": "SCI 108",
+  "description": "Biology",
+  "credits": 3,
+  "type": "Science",
+  "cap": 20,
+  "owner": "61bd04e3595d8c5bce7a3258",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d179"
+  },
+  "name": "Intro to Psychology",
+  "code": " PSYCH 111",
+  "description": "Introduction to psychology learning basic priciples of the human mind",
+  "credits": 3,
+  "type": "Social Science",
+  "cap": 20,
+  "owner": "61bd04e3595d8c5bce7a3258",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d180"
+  },
+  "name": "Intro to Sociology",
+  "code": " SOC 101",
+  "description": "Introduction to sociology focusing on society and human behavior",
+  "credits": 3,
+  "type": "Social Science",
+  "cap": 20,
+  "owner": "61bd04e3595d8c5bce7a3258",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d181"
+  },
+  "name": "Business Math",
+  "code": " MTH 105",
+  "description": "Mathmatics that are used to balance workbooks and other business accounts",
+  "credits": 3,
+  "type": "Math",
+  "cap": 20,
+  "owner": "61bd04e3595d8c5bce7a3258",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d182"
+  },
+  "name": "JavaScript Applications",
+  "code": " CIS 158",
+  "description": "Introducing JavaScript and the many ways you can use it for webpages and web applications",
+  "credits": 3,
+  "type": "Computer Science",
+  "cap": 20,
+  "owner": "61bd04e3595d8c5bce7a3258",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d183"
+  },
+  "name": "Mobile App Development",
+  "code": " CIS 327",
+  "description": "Introducing Mobile development through Android Studio",
+  "credits": 3,
+  "type": "Computer Science",
+  "cap": 20,
+  "owner": "61bd04e3595d8c5bce7a3258",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bd3170dc0fbdb04d97d184"
+  },
+  "name": "ServerSide Scripting with PHP",
+  "code": " CIS 349",
+  "description": "Introduction to PHP with a MySQL database to store, edit and delete your data",
+  "credits": 3,
+  "type": "Computer Science",
+  "cap": 20,
+  "owner": "61bd04e3595d8c5bce7a3258",
+  "__v": 0
+}]
