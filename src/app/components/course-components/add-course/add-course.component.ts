@@ -58,19 +58,19 @@ export class AddCourseComponent implements OnInit {
 
 
     //set data for form 1
-    this.courseForm3.controls['name'].setValue((<HTMLInputElement>document.getElementById('select1')).textContent);
-    this.courseForm3.controls['credits'].setValue((<HTMLInputElement>document.getElementById('credits1')).textContent);
-    this.courseForm3.controls['code'].setValue((<HTMLInputElement>document.getElementById('code1')).textContent);
-    this.courseForm3.controls['description'].setValue((<HTMLInputElement>document.getElementById('description1')).textContent);
-    this.courseForm3.controls['type'].setValue((<HTMLInputElement>document.getElementById('type1')).textContent);
-    this.courseForm3.controls['cap'].setValue((<HTMLInputElement>document.getElementById('cap1')).textContent);
+    this.courseForm.controls['name'].setValue((<HTMLInputElement>document.getElementById('select1')).textContent);
+    this.courseForm.controls['credits'].setValue((<HTMLInputElement>document.getElementById('credits1')).textContent);
+    this.courseForm.controls['code'].setValue((<HTMLInputElement>document.getElementById('code1')).textContent);
+    this.courseForm.controls['description'].setValue((<HTMLInputElement>document.getElementById('description1')).textContent);
+    this.courseForm.controls['type'].setValue((<HTMLInputElement>document.getElementById('type1')).textContent);
+    this.courseForm.controls['cap'].setValue((<HTMLInputElement>document.getElementById('cap1')).textContent);
     //set data for form 2
-    this.courseForm3.controls['name'].setValue((<HTMLInputElement>document.getElementById('select2')).textContent);
-    this.courseForm3.controls['credits'].setValue((<HTMLInputElement>document.getElementById('credits2')).textContent);
-    this.courseForm3.controls['code'].setValue((<HTMLInputElement>document.getElementById('code2')).textContent);
-    this.courseForm3.controls['description'].setValue((<HTMLInputElement>document.getElementById('description2')).textContent);
-    this.courseForm3.controls['type'].setValue((<HTMLInputElement>document.getElementById('type2')).textContent);
-    this.courseForm3.controls['cap'].setValue((<HTMLInputElement>document.getElementById('cap2')).textContent);
+    this.courseForm2.controls['name'].setValue((<HTMLInputElement>document.getElementById('select2')).textContent);
+    this.courseForm2.controls['credits'].setValue((<HTMLInputElement>document.getElementById('credits2')).textContent);
+    this.courseForm2.controls['code'].setValue((<HTMLInputElement>document.getElementById('code2')).textContent);
+    this.courseForm2.controls['description'].setValue((<HTMLInputElement>document.getElementById('description2')).textContent);
+    this.courseForm2.controls['type'].setValue((<HTMLInputElement>document.getElementById('type2')).textContent);
+    this.courseForm2.controls['cap'].setValue((<HTMLInputElement>document.getElementById('cap2')).textContent);
     //set data for form 3
     this.courseForm3.controls['name'].setValue((<HTMLInputElement>document.getElementById('select3')).textContent);
     this.courseForm3.controls['credits'].setValue((<HTMLInputElement>document.getElementById('credits3')).textContent);
