@@ -48,9 +48,10 @@ export class LoginPageComponent implements OnInit {
         alert("Please enter a valid email!");
     }
 
-    if(passInput ===''){
+    if(passInput ==''){
       alert("Password field can not be empty!");
     }
+     
 
     for (let i = 0; i < this.Student.length; i++) {
 
@@ -64,8 +65,15 @@ export class LoginPageComponent implements OnInit {
           localStorage.setItem("studentId", this.Student[i]._id);
           
           this.ngZone.run(() => this.router.navigateByUrl('/course-list'))
-          }
-        } 
+
+        } else if (emailInput !== this.Student[i].email ||  passInput !== this.Student[i].password ){
+          alert('Password or email is incorrect for the user');
+          console.log('password fail');
+        }
+      } 
+      else{
+        console.log("successful login");
+      }
     }
   }
   onRegisterClick(): any {
