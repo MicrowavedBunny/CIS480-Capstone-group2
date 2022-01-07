@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;600&family=Lora:wght@700&display=swap" rel="stylesheet">
 
-<h1>Course Registration</h1>
+<!--<h1>Course Registration</h1>
 <div class="form-flex-container">
     <div class="form-one">
         <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
@@ -150,5 +150,245 @@
     <div class="form-group">
         <button class="btn btn-primary btn-block" type="submit">Add Courses</button>
     </div>
+</form>
+</div> -->
+
+<h1>Course Registration</h1>
+<div class="form-flex-container">
+  <div class="form-one">
+    <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <h1>Semester: <span>Fall</span></h1>
+        <div class="label-control">
+            <mat-form-field appearance="fill">
+            <mat-label>Class:</mat-label>
+            <mat-select [formControl]="selectedCourse" id="select1">
+              <mat-option value="" selected></mat-option>
+              <mat-option *ngFor="let course of courses" [value]="course">
+                  {{course.name}}</mat-option>
+            </mat-select>
+            <input
+              class="form-control"
+              type="hidden"
+              formControlName="name"
+              required
+            />
+           </mat-form-field>
+        </div>
+        <div class="label-control">
+          <label> Credit Hours:</label>
+          <p id="credits1">{{selectedCourse.value?.credits}}</p>
+          <input
+            class="form-control"
+            type="hidden"
+            formControlName="credits"
+            required
+          />
+        </div>
+
+        <div class="label-control">
+            <label>Class Code:</label>
+            <p id="code1">{{selectedCourse.value?.code}}</p>
+            <input
+              class="form-control"
+              type="hidden"
+              formControlName="code"
+              required
+            />
+          </div>
+
+          <div class="label-control">
+            <label>Class Description:</label>
+            <p id="description1">{{selectedCourse.value?.description}}</p>
+            <input
+              class="form-control"
+              type="hidden"
+              formControlName="description"
+              required
+            />
+          </div>
+
+          <div class="label-control">
+            <label>Class Type:</label>
+            <p id="type1">{{selectedCourse.value?.type}}</p>
+            <input
+              class="form-control"
+              type="hidden"
+              formControlName="type"
+              required
+            />
+          </div>
+
+          <div class="label-control">
+            <label>Available Seats:</label>
+            <p id="cap1">{{selectedCourse.value?.cap}}</p>
+            <input
+              class="form-control"
+              type="hidden"
+              formControlName="cap"
+              required
+            />
+          </div>
+      </div>
+    </form>
+</div>
+<div class="form-two">
+    <form [formGroup]="courseForm2" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <h1>Semester: <span>Spring</span></h1>
+        <div class="label-control">
+            <mat-form-field appearance="fill">
+            <mat-label>Class:</mat-label>
+            <mat-select [formControl]="selectedCourse2" id="select2">
+              <mat-option value="" selected></mat-option>
+              <mat-option *ngFor="let course of courses" [value]="course">
+                  {{course.name}}</mat-option>
+            </mat-select>
+            <input
+              class="form-control"
+              type="hidden"
+              formControlName="name"
+              required
+            />
+           </mat-form-field>
+        </div>
+        <div class="label-control">
+          <label> Credit Hours:</label>
+          <p id="credits2">{{selectedCourse2.value?.credits}}</p>
+          <input
+            class="form-control"
+            type="hidden"
+            formControlName="credits"
+            required
+          />
+        </div>
+
+        <div class="label-control">
+            <label>Class Code:</label>
+            <p id="code2">{{selectedCourse2.value?.code}}</p>
+            <input
+              class="form-control"
+              type="hidden"
+              formControlName="code"
+              required
+            />
+          </div>
+
+          <div class="label-control">
+            <label>Class Description:</label>
+            <p id="description2">{{selectedCourse2.value?.description}}</p>
+            <input
+              class="form-control"
+              type="hidden"
+              formControlName="description"
+              required
+            />
+          </div>
+
+          <div class="label-control">
+            <label>Class Type:</label>
+            <p id="type2">{{selectedCourse2.value?.type}}</p>
+            <input
+              class="form-control"
+              type="hidden"
+              formControlName="type"
+              required
+            />
+          </div>
+
+          <div class="label-control">
+            <label>Available Seats:</label>
+            <p id="cap2">{{selectedCourse2.value?.cap}}</p>
+            <input
+              class="form-control"
+              type="hidden"
+              formControlName="cap"
+              required
+            />
+          </div> 
+      </div>
+    </form>
+</div>
+<div class="form-three">
+    <form [formGroup]="courseForm3" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <h1>Semester: <span>Spring</span></h1>
+        <div class="label-control">
+            <mat-form-field appearance="fill">
+            <mat-label>Class:</mat-label>
+            <mat-select [formControl]="selectedCourse3" id="select3">
+              <mat-option value="" selected></mat-option>
+              <mat-option *ngFor="let course of courses" [value]="course">
+                  {{course.name}}</mat-option>
+            </mat-select>
+            <input
+              class="form-control"
+              type="hidden"
+              formControlName="name"
+              required
+            />
+           </mat-form-field>
+        </div>
+        <div class="label-control">
+          <label> Credit Hours:</label>
+          <p id="credits3">{{selectedCourse3.value?.credits}}</p>
+          <input
+            class="form-control"
+            type="hidden"
+            formControlName="credits"
+            required
+          />
+        </div>
+
+        <div class="label-control">
+            <label>Class Code:</label>
+            <p id="code3">{{selectedCourse3.value?.code}}</p>
+            <input
+              class="form-control"
+              type="hidden"
+              formControlName="code"
+              required
+            />
+          </div>
+
+          <div class="label-control">
+            <label>Class Description:</label>
+            <p id="description3">{{selectedCourse3.value?.description}}</p>
+            <input
+              class="form-control"
+              type="hidden"
+              formControlName="description"
+              required
+            />
+          </div>
+
+          <div class="label-control">
+            <label>Class Type:</label>
+            <p id="type3">{{selectedCourse3.value?.type}}</p>
+            <input
+              class="form-control"
+              type="hidden"
+              formControlName="type"
+              required
+            />
+          </div>
+
+          <div class="label-control">
+            <label>Available Seats:</label>
+            <p id="cap3">{{selectedCourse3.value?.cap}}</p>
+            <input
+              class="form-control"
+              type="hidden"
+              formControlName="cap"
+              required
+            />
+          </div> 
+      </div>
+    </form>
+</div>
+<form style="position: relative;border-width: 0px;border-radius: 0px;padding: 0px;border-color:white;background-color: rgba( 71, 147, 227, 1);" (ngSubmit)="onSubmit()">  
+  <div class="form-group">
+      <button class="btn btn-primary btn-block" type="submit">Add Courses</button>
+  </div>
 </form>
 </div>

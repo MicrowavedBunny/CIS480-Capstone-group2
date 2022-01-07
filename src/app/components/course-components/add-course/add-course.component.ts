@@ -1,7 +1,16 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit, NgZone, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Router } from '@angular/router';
 import { CrudService } from 'src/app/service/crud.service';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+
+interface Course {
+  name: string;
+  code: string;
+  description: string;
+  credits: number;
+  type: string;
+  cap: number;
+}
 
 @Component({
   selector: 'app-add-course',
@@ -9,7 +18,89 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./add-course.component.css']
 })
 
+
 export class AddCourseComponent implements OnInit {
+  //Grabbing data for the Html
+  selectedCourse = new FormControl('');
+  selectedCourse2 = new FormControl('');
+  selectedCourse3 = new FormControl('');
+  courses: Course[] = [
+    {
+      name: "Intro to Programming",
+      code: "CIS 101",
+      description: "First steps to learning how to create logic for basic programs",
+      credits: 3,
+      type: "Computer Science",
+      cap: 20
+    },
+    {
+      name: "College Algerbra",
+      code: "MTH 101",
+      description: "College Algerbra",
+      credits: 3,
+      type: "Math",
+      cap: 20
+    },
+    {
+      name: "College English",
+      code: "ENG 101",
+      description: "College English",
+      credits: 3,
+      type: "English",
+      cap: 20,
+    },
+    {
+      name: "Biology I",
+      code: "SCI 108",
+      description: "Biology",
+      credits: 3,
+      type: "Science",
+      cap: 20,
+    },
+    {
+      name: "Intro to Psychology",
+      code: " PSYCH 111",
+      description: "Introduction to psychology learning basic priciples of the human mind",
+      credits: 3,
+      type: "Social Science",
+      cap: 20,
+    }, {
+      name: "Intro to Sociology",
+      code: " SOC 101",
+      description: "Introduction to sociology focusing on society and human behavior",
+      credits: 3,
+      type: "Social Science",
+      cap: 20,
+    }, {
+      name: "Business Math",
+      code: " MTH 105",
+      description: "Mathmatics that are used to balance workbooks and other business accounts",
+      credits: 3,
+      type: "Math",
+      cap: 20,
+    }, {
+      name: "JavaScript Applications",
+      code: " CIS 158",
+      description: "Introducing JavaScript and the many ways you can use it for webpages and web applications",
+      credits: 3,
+      type: "Computer Science",
+      cap: 20
+    }, {
+      name: "Mobile App Development",
+      code: " CIS 327",
+      description: "Introducing Mobile development through Android Studio",
+      credits: 3,
+      type: "Computer Science",
+      cap: 20
+    }, {
+      name: "ServerSide Scripting with PHP",
+      code: " CIS 349",
+      description: "Introduction to PHP with a MySQL database to store, edit and delete your data",
+      credits: 3,
+      type: "Computer Science",
+      cap: 20
+    }
+  ];
 
   //forms
   courseForm: FormGroup;
@@ -49,11 +140,11 @@ export class AddCourseComponent implements OnInit {
       cap: [''],
       owner: [localStorage.getItem("studentId")]  //this cant be '' or it will clear the form value (if it is set in the hidden form inside html) this is where we need to pass in the user id from the other collection
     })
-   }
+  }
 
   ngOnInit(): void {
-   }
-  
+  }
+
   onSubmit(): any {
 
 
@@ -89,14 +180,14 @@ export class AddCourseComponent implements OnInit {
       }, (err) => {
         console.log(err);
       });
-      this.crudService.AddCourse(this.courseForm2.value)
+    this.crudService.AddCourse(this.courseForm2.value)
       .subscribe(() => {
         console.log('Data added successfully')
         this.ngZone.run(() => this.router.navigateByUrl('/course-list'))
       }, (err) => {
         console.log(err);
       });
-      this.crudService.AddCourse(this.courseForm3.value)
+    this.crudService.AddCourse(this.courseForm3.value)
       .subscribe(() => {
         console.log('Data added successfully')
         this.ngZone.run(() => this.router.navigateByUrl('/course-list'))

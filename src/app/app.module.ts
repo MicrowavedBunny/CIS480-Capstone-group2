@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,8 +13,7 @@ import { AddCourseComponent } from './components/course-components/add-course/ad
 import { RemoveCourseComponent } from './components/course-components/remove-course/remove-course.component';
 import { RegisterPageComponent } from './components/student-components/register-page/register-page.component';
 import { LoginPageComponent } from './components/student-components/login-page/login-page.component';
-
-
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -32,7 +31,8 @@ import { LoginPageComponent } from './components/student-components/login-page/l
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
