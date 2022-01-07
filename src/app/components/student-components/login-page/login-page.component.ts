@@ -62,22 +62,10 @@ export class LoginPageComponent implements OnInit {
           console.log(this.Student[i]._id);
           this.studentId = this.Student[i]._id;
           localStorage.setItem("studentId", this.Student[i]._id);
+          
+          this.ngZone.run(() => this.router.navigateByUrl('/course-list'))
           }
         } 
-        else if (emailInput == this.Student[i].email && passInput !== this.Student[i].password){
-          alert('Password is incorrect for this email!');
-          console.log('password fail');
-        }
-      else if (emailInput !== this.Student[i].email && passInput == this.Student[i].password) {
-        alert("Email is incorrect for this password!");
-        console.log('email fail');
-      }
-      else if (emailInput !== this.Student[i].email && passInput !== this.Student[i].password) {
-        alert("Both password and email are incorrect!");
-      }
-      else{
-        console.log("successful login");
-      }
     }
   }
   onRegisterClick(): any {
