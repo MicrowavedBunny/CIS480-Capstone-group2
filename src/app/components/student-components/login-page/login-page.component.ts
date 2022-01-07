@@ -40,9 +40,18 @@ export class LoginPageComponent implements OnInit {
   }
 
   onLogin(): any {
-    var emailInput = (<HTMLInputElement>document.getElementById('emailInput')).value;
-    var passInput = (<HTMLInputElement>document.getElementById('passInput')).value;
+    var emailInput = (<HTMLInputElement>document.getElementById('emailInput')).value.trim();
+    var passInput = (<HTMLInputElement>document.getElementById('passInput')).value.trim();
+    var emailFormat = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+  
+    if(!emailInput.match(emailFormat)){
+        alert("Please enter a valid email!");
+    }
 
+    if(passInput ==''){
+      alert("Password field can not be empty!");
+    }
+     
 
     for (let i = 0; i < this.Student.length; i++) {
 
@@ -56,11 +65,16 @@ export class LoginPageComponent implements OnInit {
           localStorage.setItem("studentId", this.Student[i]._id);
           
           this.ngZone.run(() => this.router.navigateByUrl('/course-list'))
-        } else {
+        } else if (emailInput == this.Student[i].email && passInput !== this.Student[i].password){
+          alert('Password is incorrect for this email!');
           console.log('password fail');
         }
-      } else {
+      } else if (emailInput !== this.Student[i].email && passInput == this.Student[i].password) {
+        alert("Email is incorrect for this password!");
         console.log('email fail');
+      }
+      else {
+        alert("Both password and email are incorrect!");
       }
     }
   }
