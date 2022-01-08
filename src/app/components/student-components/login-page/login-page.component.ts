@@ -43,7 +43,8 @@ export class LoginPageComponent implements OnInit {
     var emailInput = (<HTMLInputElement>document.getElementById('emailInput')).value.trim();
     var passInput = (<HTMLInputElement>document.getElementById('passInput')).value.trim();
     var emailFormat = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
-  
+    
+   
     if(!emailInput.match(emailFormat)){
         alert("Please enter a valid email!");
     }
@@ -52,6 +53,7 @@ export class LoginPageComponent implements OnInit {
       alert("Password field can not be empty!");
     }
      
+    
 
     for (let i = 0; i < this.Student.length; i++) {
 
@@ -66,14 +68,8 @@ export class LoginPageComponent implements OnInit {
           
           this.ngZone.run(() => this.router.navigateByUrl('/course-list'))
 
-        } else if (emailInput !== this.Student[i].email ||  passInput !== this.Student[i].password ){
-          alert('Password or email is incorrect for the user');
-          console.log('password fail');
-        }
+        } 
       } 
-      else{
-        console.log("successful login");
-      }
     }
   }
   onRegisterClick(): any {
