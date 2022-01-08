@@ -44,7 +44,15 @@ export class LoginPageComponent implements OnInit {
     var passInput = (<HTMLInputElement>document.getElementById('passInput')).value.trim();
     var emailFormat = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
     
-   
+    const user = this.Student.find((student:any) =>student.email === emailInput && student.password === passInput);
+
+      if (user) {
+        // we have user in database
+        console.log("successful login");
+    } else {
+        alert("The Email and Password do not match!");
+    }
+  
     if(!emailInput.match(emailFormat)){
         alert("Please enter a valid email!");
     }
