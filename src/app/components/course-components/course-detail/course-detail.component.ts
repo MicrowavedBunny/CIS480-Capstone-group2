@@ -24,7 +24,7 @@ export class CourseDetailComponent implements OnInit {
     this.getId = this.activatedRoute.snapshot.paramMap.get('id');
 
     this.crudService.GetCourse(this.getId).subscribe(res => {
-      this.updateForm.setValue({
+      this.updateForm.patchValue({
         name: res['name'],
         code: res['code'],
         description: res['description'],
