@@ -3,29 +3,74 @@
     <div class="col-md-4">
         <form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
             <div class="form-group">
-                <label>name</label>
-                <input class="form-control" type="text" formControlName="name" required>
+            <mat-form-field appearance="fill">
+            <mat-label>Class:</mat-label>
+            <mat-select [formControl]="selectedCourse" id="select1">
+              <mat-option *ngFor="let course of courses" [value]="course">
+                  {{course.name}}</mat-option>
+            </mat-select>
+            <input
+              class="form-control"
+              type="hidden"
+              formControlName="name"
+              required
+            />
+           </mat-form-field>
             </div>
-            <div class="form-group">
-                <label>code</label>
-                <input class="form-control" type="text" formControlName="code" required>
-            </div>
-            <div class="form-group">
-                <label>description</label>
-                <input class="form-control" type="text" formControlName="description" required>
-            </div>
-            <div class="form-group">
-                <label>credits</label>
-                <input class="form-control" type="number" formControlName="credits" required>
-            </div>
-            <div class="form-group">
-                <label>type</label>
-                <input class="form-control" type="text" formControlName="type" required>
-            </div>
-            <div class="form-group">
-                <label>cap</label>
-                <input class="form-control" type="number" formControlName="cap" required>
-            </div>
+            <div class="label-control">
+                <label> Credit Hours:</label>
+                <p id="credits1">{{selectedCourse.value?.credits}}</p>
+                <input
+                  class="form-control"
+                  type="hidden"
+                  formControlName="credits"
+                  required
+                />
+              </div>
+
+              <div class="label-control">
+                <label>Class Code:</label>
+                <p id="code1">{{selectedCourse.value?.code}}</p>
+                <input
+                  class="form-control"
+                  type="hidden"
+                  formControlName="code"
+                  required
+                />
+              </div>    
+              
+              <div class="label-control">
+                <label>Class Description:</label>
+                <p id="description1">{{selectedCourse.value?.description}}</p>
+                <input
+                  class="form-control"
+                  type="hidden"
+                  formControlName="description"
+                  required
+                />
+              </div>
+    
+              <div class="label-control">
+                <label>Class Type:</label>
+                <p id="type1">{{selectedCourse.value?.type}}</p>
+                <input
+                  class="form-control"
+                  type="hidden"
+                  formControlName="type"
+                  required
+                />
+              </div>
+
+              <div class="label-control">
+                <label>Available Seats:</label>
+                <p id="cap1">{{selectedCourse.value?.cap}}</p>
+                <input
+                  class="form-control"
+                  type="hidden"
+                  formControlName="cap"
+                  required
+                />
+              </div>
             <div class="form-group">
                 <input class="form-control" type="hidden" formControlName="owner" required>
             </div>
