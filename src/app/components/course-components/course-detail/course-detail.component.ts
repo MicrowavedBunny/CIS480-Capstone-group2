@@ -98,6 +98,8 @@ export class CourseDetailComponent implements OnInit {
     }
   ];
 
+  selected = this.courses[1];
+
   //forms
   getId: any;
   updateForm: FormGroup;
@@ -119,7 +121,7 @@ export class CourseDetailComponent implements OnInit {
         credits: res['credits'],
         type: res['type'],
         cap: res['cap'],
-        owner: [localStorage.getItem("studentId")]  //this cant be '' or it will clear the form value (if it is set in the hidden form inside html) this is where we need to pass in the user id from the other collection
+        owner: res['owner']
       });
     });
 
