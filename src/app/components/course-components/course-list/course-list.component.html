@@ -28,14 +28,14 @@
             <td>{{course.cap}}
             <td class="text-center">
               <button class="btn btn-sm btn-primary"
-                routerLink="/edit-course/{{course._id}}">Edit
+                routerLink="/edit-course/{{course._id}}">Change Course
                 </button>
             </td>
             <td class="text-center">
               <form style="position: relative;border-width: 0px;border-radius: 0px;padding: 0px;border-color:white;background-color: white;"
                (ngSubmit)="onDelete(ref)">
                 <input #ref type="hidden" id="courseId" value={{course._id}}>
-                <button class="btn btn-sm btn-primary" type="submit" >Delete...</button>
+                <button class="btn btn-sm btn-primary" type="submit" >Drop Course</button>
               </form>
             </td>
           </tr>
