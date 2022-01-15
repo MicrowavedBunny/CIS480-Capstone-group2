@@ -43,8 +43,8 @@ ngOnInit(): void {
 
 onDelete(ref:any): any {
   var id = ref.value;
-  console.log(id);
   //call the method to actually remove the course
+  if (confirm('Are you sure you want to drop this course?')) {
   this.crudService.RemoveCourse(id)
     .subscribe(() =>{
       //send the user back to the list of course
@@ -53,6 +53,6 @@ onDelete(ref:any): any {
     }, (err) => {
       console.log(err)
     })
+  }
 }
-
 }
