@@ -24,7 +24,7 @@ export class AddCourseComponent implements OnInit {
   selectedCourse = new FormControl('');
   selectedCourse2 = new FormControl('');
   selectedCourse3 = new FormControl('');
-  
+
   courses: Course[] = [
     {
       name: "Intro to Programming",
@@ -60,42 +60,42 @@ export class AddCourseComponent implements OnInit {
     },
     {
       name: "Intro to Psychology",
-      code: " PSYCH 111",
+      code: "PSYCH 111",
       description: "Introduction to psychology learning basic priciples of the human mind",
       credits: 3,
       type: "Social Science",
       cap: 20,
     }, {
       name: "Intro to Sociology",
-      code: " SOC 101",
+      code: "SOC 101",
       description: "Introduction to sociology focusing on society and human behavior",
       credits: 3,
       type: "Social Science",
       cap: 20,
     }, {
       name: "Business Math",
-      code: " MTH 105",
+      code: "MTH 105",
       description: "Mathmatics that are used to balance workbooks and other business accounts",
       credits: 3,
       type: "Math",
       cap: 20,
     }, {
       name: "JavaScript Applications",
-      code: " CIS 158",
+      code: "CIS 158",
       description: "Introducing JavaScript and the many ways you can use it for webpages and web applications",
       credits: 3,
       type: "Computer Science",
       cap: 20
     }, {
       name: "Mobile App Development",
-      code: " CIS 327",
+      code: "CIS 327",
       description: "Introducing Mobile development through Android Studio",
       credits: 3,
       type: "Computer Science",
       cap: 20
     }, {
       name: "ServerSide Scripting with PHP",
-      code: " CIS 349",
+      code: "CIS 349",
       description: "Introduction to PHP with a MySQL database to store, edit and delete your data",
       credits: 3,
       type: "Computer Science",
@@ -108,12 +108,21 @@ export class AddCourseComponent implements OnInit {
   courseForm2: FormGroup;
   courseForm3: FormGroup;
 
+  boolCourseCode: boolean;
+  boolCourseCode2: boolean;
+  boolCourseCode3: boolean;
+
   constructor(
     public formBuilder: FormBuilder,
     private router: Router,
     private ngZone: NgZone,
     private crudService: CrudService
   ) {
+
+    this.boolCourseCode = false;
+    this.boolCourseCode2 = false;
+    this.boolCourseCode3 = false;
+
     this.courseForm = this.formBuilder.group({
       name: [''],
       code: [''],
@@ -142,13 +151,13 @@ export class AddCourseComponent implements OnInit {
       owner: [localStorage.getItem("studentId")]  //this cant be '' or it will clear the form value (if it is set in the hidden form inside html) this is where we need to pass in the user id from the other collection
     })
   }
-  
+
 
   ngOnInit(): void {
   }
 
   onSubmit(): any {
-    
+
 
     //set data for form 1
     this.courseForm.controls['name'].setValue((<HTMLInputElement>document.getElementById('select1')).textContent);
@@ -173,40 +182,71 @@ export class AddCourseComponent implements OnInit {
     this.courseForm3.controls['type'].setValue((<HTMLInputElement>document.getElementById('type3')).textContent);
     this.courseForm3.controls['cap'].setValue((<HTMLInputElement>document.getElementById('cap3')).textContent);
 
-    if(this.selectedCourse.value == ''){
-      console.log("Course empty");
+
+    //need to compare the code retreived to logged in users stored courses
+    //gets boolean for form comparison
+    if (this.courseForm.controls['code'].value == this.courseForm2.controls['code'].value
+      || this.courseForm.controls['code'].value == this.courseForm3.controls['code'].value) {
+      this.boolCourseCode = true;
     } else {
-    //collect and add data to db
-    this.crudService.AddCourse(this.courseForm.value)
-      .subscribe(() => {
-        console.log('Data added successfully')
-        this.ngZone.run(() => this.router.navigateByUrl('/course-list'))
-      }, (err) => {
-        console.log(err);
-      });
+      this.boolCourseCode = false;
     }
-    if(this.selectedCourse2.value == ''){
-      console.log("Course empty")
+
+    if (this.courseForm2.controls['code'].value == this.courseForm.controls['code'].value
+      || this.courseForm2.controls['code'].value == this.courseForm3.controls['code'].value) {
+      this.boolCourseCode2 = true;
     } else {
-    this.crudService.AddCourse(this.courseForm2.value)
-      .subscribe(() => {
-        console.log('Data added successfully')
-        this.ngZone.run(() => this.router.navigateByUrl('/course-list'))
-      }, (err) => {
-        console.log(err);
-      });
+      this.boolCourseCode2 = false;
     }
-    if(this.selectedCourse3.value ==''){
-      console.log("Course empty")
+
+    if (this.courseForm3.controls['code'].value == this.courseForm2.controls['code'].value
+      || this.courseForm3.controls['code'].value == this.courseForm.controls['code'].value) {
+      this.boolCourseCode3 = true;
     } else {
-    this.crudService.AddCourse(this.courseForm3.value)
-      .subscribe(() => {
-        console.log('Data added successfully')
-        this.ngZone.run(() => this.router.navigateByUrl('/course-list'))
-      }, (err) => {
-        console.log(err);
-      });
+      this.boolCourseCode3 = false;
+    }
+
+
+
+    if (this.boolCourseCode == true || this.boolCourseCode2 == true || this.boolCourseCode3 == true) {
+      alert("you have a duplicate dumbass");
+    } else {
+      if (this.selectedCourse.value == '') {
+        console.log("Course empty");
+      } else {
+        //collect and add data to db
+        this.crudService.AddCourse(this.courseForm.value)
+          .subscribe(() => {
+            console.log('Data added successfully')
+            this.ngZone.run(() => this.router.navigateByUrl('/course-list'))
+          }, (err) => {
+            console.log(err);
+          });
+      }
+      if (this.selectedCourse2.value == '') {
+        console.log("Course empty")
+      } else {
+        this.crudService.AddCourse(this.courseForm2.value)
+          .subscribe(() => {
+            console.log('Data added successfully')
+            this.ngZone.run(() => this.router.navigateByUrl('/course-list'))
+          }, (err) => {
+            console.log(err);
+          });
+      }
+      if (this.selectedCourse3.value == '') {
+        console.log("Course empty")
+      } else {
+        this.crudService.AddCourse(this.courseForm3.value)
+          .subscribe(() => {
+            console.log('Data added successfully')
+            this.ngZone.run(() => this.router.navigateByUrl('/course-list'))
+          }, (err) => {
+            console.log(err);
+          });
+      }
+    }
+
   }
-}
 
 }
