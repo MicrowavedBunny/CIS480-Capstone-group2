@@ -109,8 +109,8 @@ export class AddCourseComponent implements OnInit {
   courseForm3: FormGroup;
 
   boolCourseCode: boolean;
-  boolCourseCode2: boolean;
-  boolCourseCode3: boolean;
+  boolCourseCodeDb: boolean;
+  test:any;
 
   constructor(
     public formBuilder: FormBuilder,
@@ -120,8 +120,7 @@ export class AddCourseComponent implements OnInit {
   ) {
 
     this.boolCourseCode = false;
-    this.boolCourseCode2 = false;
-    this.boolCourseCode3 = false;
+    this.boolCourseCodeDb = false;
 
     this.courseForm = this.formBuilder.group({
       name: [''],
@@ -158,7 +157,6 @@ export class AddCourseComponent implements OnInit {
 
   onSubmit(): any {
 
-
     //set data for form 1
     this.courseForm.controls['name'].setValue((<HTMLInputElement>document.getElementById('select1')).textContent);
     this.courseForm.controls['credits'].setValue((<HTMLInputElement>document.getElementById('credits1')).textContent);
@@ -183,34 +181,63 @@ export class AddCourseComponent implements OnInit {
     this.courseForm3.controls['cap'].setValue((<HTMLInputElement>document.getElementById('cap3')).textContent);
 
 
-    //need to compare the code retreived to logged in users stored courses
+
     //gets boolean for form comparison
     if (this.courseForm.controls['code'].value == this.courseForm2.controls['code'].value
-      || this.courseForm.controls['code'].value == this.courseForm3.controls['code'].value) {
+      || this.courseForm.controls['code'].value == this.courseForm3.controls['code'].value || this.courseForm2.controls['code'].value == this.courseForm.controls['code'].value
+      || this.courseForm2.controls['code'].value == this.courseForm3.controls['code'].value || this.courseForm3.controls['code'].value == this.courseForm2.controls['code'].value
+      || this.courseForm3.controls['code'].value == this.courseForm.controls['code'].value) {
       this.boolCourseCode = true;
     } else {
       this.boolCourseCode = false;
     }
-
-    if (this.courseForm2.controls['code'].value == this.courseForm.controls['code'].value
-      || this.courseForm2.controls['code'].value == this.courseForm3.controls['code'].value) {
-      this.boolCourseCode2 = true;
-    } else {
-      this.boolCourseCode2 = false;
+    //check if fields are empty to avoid void duplicate error
+    if ((this.selectedCourse.value == '' && this.selectedCourse2.value == '') || (this.selectedCourse.value == '' && this.selectedCourse3.value == '') || (this.selectedCourse2.value == '' && this.selectedCourse3.value == '')){
+      this.boolCourseCode = false;
+    }
+    //separate alert for 3 empty fields
+    if (this.selectedCourse.value == '' && this.selectedCourse2.value == '' && this.selectedCourse3.value == ''){
+      alert("No course selected");
     }
 
-    if (this.courseForm3.controls['code'].value == this.courseForm2.controls['code'].value
-      || this.courseForm3.controls['code'].value == this.courseForm.controls['code'].value) {
-      this.boolCourseCode3 = true;
-    } else {
-      this.boolCourseCode3 = false;
-    }
+//broken code for db comparison v1 (wont set to true i believe do to the timing this function executes)
+
+    //code for getting already register course codes + compare the code retreived to logged in users stored courses
+    // this.crudService.getCourseByOwner(localStorage.studentId).subscribe(res => {
+    //   console.log(res);
+    //  this.boolCourseCodeDb = false;
+    //     for (let i = 0; i < res.length; i++) {
+    //       //console.log(res[i].code);
+    //       if (this.courseForm.controls['code'].value == res[i].code || this.courseForm2.controls['code'].value == res[i].code || this.courseForm3.controls['code'].value == res[i].code) {
+    //         //some bool value set to true
+    //         this.boolCourseCodeDb = true;
+    //       }
+    //     }
+    // });
+
+//broken code for db comparison v2 (takes two clicks to even work same issue as V1 i think)
+
+    // this.boolCourseCodeDb == false;
+    // //code for getting already register course codes + compare the code retreived to logged in users stored courses
+    // this.crudService.getCourseByOwner(localStorage.studentId).subscribe(res => {
+    // this.test = res;
+    // });
+
+    // for (let i = 0; i < this.test.length; i++) {
+    //   console.log(this.test[i].code);
+    //   console.log(this.courseForm.controls['code'].value);
+    //    if (this.courseForm.controls['code'].value == this.test[i].code || this.courseForm2.controls['code'].value ==  this.test[i].code || this.courseForm3.controls['code'].value == this.test[i].code) {
+    //      //some bool value set to true
+    //      this.boolCourseCodeDb = true;
+    //    }
+    //  }
+
+    // console.log(this.boolCourseCodeDb);
 
 
-
-    if (this.boolCourseCode == true || this.boolCourseCode2 == true || this.boolCourseCode3 == true) {
-      alert("you have a duplicate dumbass");
-    } else {
+    if (this.boolCourseCode == true) {
+      alert("Duplicate course selected");
+   } else {
       if (this.selectedCourse.value == '') {
         console.log("Course empty");
       } else {
@@ -232,7 +259,7 @@ export class AddCourseComponent implements OnInit {
             this.ngZone.run(() => this.router.navigateByUrl('/course-list'))
           }, (err) => {
             console.log(err);
-          });
+          }); 
       }
       if (this.selectedCourse3.value == '') {
         console.log("Course empty")
