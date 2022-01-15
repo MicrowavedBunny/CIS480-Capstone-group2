@@ -41,6 +41,14 @@ ngOnInit(): void {
   });    
 }
 
+onLogout(){
+  this.ngZone.run(() => this.router.navigateByUrl('login-page'));
+}
+
+onAdd(){
+  this.ngZone.run(() => this.router.navigateByUrl('add-course'));
+}
+
 onDelete(ref:any): any {
   var id = ref.value;
   //call the method to actually remove the course

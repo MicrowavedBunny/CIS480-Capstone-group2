@@ -1,9 +1,15 @@
 <a class="navbar-brand">Dashboard</a>
 <div class="container">
+
+  <form style="position: relative;border-width: 0px;border-radius: 0px;padding: 0px;border-color:white;background-color: rgba( 71, 147, 227, 1);"
+  (ngSubmit)="onLogout()">
+  <button class="btn btn-sm btn-primary" type="submit">Logout</button>
+  </form>
+
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
       <h2 class="h2">Course List</h2>
     </div>
-   
+
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead>
@@ -42,4 +48,8 @@
         </tbody>
       </table>
     </div>
+    <form style="position: relative;border-width: 0px;border-radius: 0px;padding: 0px;border-color:white;background-color: rgba( 71, 147, 227, 1);"
+    (ngSubmit)="onAdd()">
+    <button class="btn btn-sm btn-primary" type="submit">Add Course</button>
+    </form>
   </div>
