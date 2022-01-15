@@ -15,6 +15,8 @@ export class CourseListComponent implements OnInit {
  ////this needs to be passed from LoginPageComponent and it will work
  ////for now just using a place holder
  studentId: any = localStorage.getItem("studentId"); //"61bd099d595d8c5bce7a325e"; 
+ courseId: any = localStorage.getItem("courseId"); //"61bd099d595d8c5bce7a325e"; 
+
 
   constructor(
     private router: Router,
