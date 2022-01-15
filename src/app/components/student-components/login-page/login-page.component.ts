@@ -74,12 +74,13 @@ export class LoginPageComponent implements OnInit {
           this.studentId = this.Student[i]._id;
           localStorage.setItem("studentId", this.Student[i]._id);
 
-
-          if (this.crudService.getCourseByOwner(this.studentId).subscribe(res => { res == null})){
-            this.ngZone.run(() => this.router.navigateByUrl('/add-course'))
-          }else{
-          this.ngZone.run(() => this.router.navigateByUrl('/course-list'))
-          }
+          this.crudService.getCourseByOwner(this.studentId).subscribe(res => { console.log(res);
+            if (res.length == 0){
+              this.ngZone.run(() => this.router.navigateByUrl('/add-course'))
+            }else{
+            this.ngZone.run(() => this.router.navigateByUrl('/course-list'))
+            }
+          });
         } 
       } 
     }
