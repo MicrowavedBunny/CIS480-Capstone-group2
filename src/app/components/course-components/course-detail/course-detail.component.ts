@@ -15,7 +15,7 @@ interface Course {
 @Component({
   selector: 'app-course-detail',
   templateUrl: './course-detail.component.html',
-  //styleUrls: ['./course-detail.component.css']
+  styleUrls: ['./course-detail.component.css']
 })
 
 export class CourseDetailComponent implements OnInit {
@@ -114,7 +114,7 @@ export class CourseDetailComponent implements OnInit {
     this.getId = this.activatedRoute.snapshot.paramMap.get('id');
 
     this.crudService.GetCourse(this.getId).subscribe(res => {
-      this.updateForm.patchValue({
+      this.updateForm.setValue({
         name: res['name'],
         code: res['code'],
         description: res['description'],
@@ -143,7 +143,9 @@ export class CourseDetailComponent implements OnInit {
   }
 
   onUpdate(): any {
-
+    if(this.selectedCourse.value == ''){
+      alert("Please select an option");
+    } else {
     this.updateForm.controls['name'].setValue((<HTMLInputElement>document.getElementById('select1')).textContent);
     this.updateForm.controls['credits'].setValue((<HTMLInputElement>document.getElementById('credits1')).textContent);
     this.updateForm.controls['code'].setValue((<HTMLInputElement>document.getElementById('code1')).textContent);
@@ -159,5 +161,5 @@ export class CourseDetailComponent implements OnInit {
         console.log(err);
       });
   }
-
+  }
 }

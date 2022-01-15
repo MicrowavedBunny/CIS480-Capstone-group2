@@ -24,6 +24,7 @@ export class AddCourseComponent implements OnInit {
   selectedCourse = new FormControl('');
   selectedCourse2 = new FormControl('');
   selectedCourse3 = new FormControl('');
+  
   courses: Course[] = [
     {
       name: "Intro to Programming",
@@ -141,12 +142,13 @@ export class AddCourseComponent implements OnInit {
       owner: [localStorage.getItem("studentId")]  //this cant be '' or it will clear the form value (if it is set in the hidden form inside html) this is where we need to pass in the user id from the other collection
     })
   }
+  
 
   ngOnInit(): void {
   }
 
   onSubmit(): any {
-
+    
 
     //set data for form 1
     this.courseForm.controls['name'].setValue((<HTMLInputElement>document.getElementById('select1')).textContent);
@@ -155,6 +157,7 @@ export class AddCourseComponent implements OnInit {
     this.courseForm.controls['description'].setValue((<HTMLInputElement>document.getElementById('description1')).textContent);
     this.courseForm.controls['type'].setValue((<HTMLInputElement>document.getElementById('type1')).textContent);
     this.courseForm.controls['cap'].setValue((<HTMLInputElement>document.getElementById('cap1')).textContent);
+
     //set data for form 2
     this.courseForm2.controls['name'].setValue((<HTMLInputElement>document.getElementById('select2')).textContent);
     this.courseForm2.controls['credits'].setValue((<HTMLInputElement>document.getElementById('credits2')).textContent);
@@ -170,8 +173,9 @@ export class AddCourseComponent implements OnInit {
     this.courseForm3.controls['type'].setValue((<HTMLInputElement>document.getElementById('type3')).textContent);
     this.courseForm3.controls['cap'].setValue((<HTMLInputElement>document.getElementById('cap3')).textContent);
 
-
-
+    if(this.selectedCourse.value == ''){
+      console.log("Course empty");
+    } else {
     //collect and add data to db
     this.crudService.AddCourse(this.courseForm.value)
       .subscribe(() => {
@@ -180,6 +184,10 @@ export class AddCourseComponent implements OnInit {
       }, (err) => {
         console.log(err);
       });
+    }
+    if(this.selectedCourse2.value == ''){
+      console.log("Course empty")
+    } else {
     this.crudService.AddCourse(this.courseForm2.value)
       .subscribe(() => {
         console.log('Data added successfully')
@@ -187,6 +195,10 @@ export class AddCourseComponent implements OnInit {
       }, (err) => {
         console.log(err);
       });
+    }
+    if(this.selectedCourse3.value ==''){
+      console.log("Course empty")
+    } else {
     this.crudService.AddCourse(this.courseForm3.value)
       .subscribe(() => {
         console.log('Data added successfully')
@@ -195,5 +207,6 @@ export class AddCourseComponent implements OnInit {
         console.log(err);
       });
   }
+}
 
 }
