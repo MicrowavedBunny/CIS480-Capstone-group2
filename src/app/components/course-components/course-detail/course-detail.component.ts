@@ -142,6 +142,10 @@ export class CourseDetailComponent implements OnInit {
 
   }
 
+  onLogout(){
+    this.ngZone.run(() => this.router.navigateByUrl('login-page'));
+  }
+
   onUpdate(): any {
     if(this.selectedCourse.value == ''){
       alert("Please select an option");

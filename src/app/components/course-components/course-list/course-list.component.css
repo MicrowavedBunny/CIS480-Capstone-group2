@@ -30,3 +30,7 @@ button:active{
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+
+.btn-float-right{
+	float: right;
+}

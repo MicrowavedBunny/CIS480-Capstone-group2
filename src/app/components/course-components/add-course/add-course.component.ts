@@ -155,6 +155,10 @@ export class AddCourseComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onLogout(){
+    this.ngZone.run(() => this.router.navigateByUrl('login-page'));
+  }
+  
   onSubmit(): any {
 
     //set data for form 1
