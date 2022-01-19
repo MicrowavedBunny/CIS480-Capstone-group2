@@ -1,30 +1,47 @@
-<a class="navbar-brand">Register Account</a>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Lora:wght@700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;600&family=Lora:wght@700&display=swap" rel="stylesheet">
+
+
+<h1>Register Account</h1>
 <div class="row justify-content-center mt-5">
     <div class="col-md-4">
+        <div class='flex-container'>
         <form [formGroup]="registerAccForm" (ngSubmit)="onRegister()">
+            <div class="input-flex-container">
             <div class="form-group">
-                <label>firstName</label>
+                <label>First Name:</label>
                 <input class="form-control" id="first" type="text" formControlName="firstName" required>
             </div>
             <div class="form-group">
-                <label>lastName</label>
+                <label>Last Name:</label>
                 <input class="form-control" id="last" type="text" formControlName="lastName" required>
             </div>
             <div class="form-group">
-                <label>email</label>
+                <label>Email:</label>
                 <input class="form-control" type="text" id="emailInput" formControlName="email" required>
             </div>
             <div class="form-group">
-                <label>password</label>
-                <input class="form-control" type="text" id= "pass" formControlName="password" required>
+                <label>Password:</label>
+                <input class="form-control" type="password" id= "pass" formControlName="password" required>
             </div>
             <div class="form-group">
-                <label>Re-enter password</label>
-                <input class="form-control" type="text"  id= "reenterpass" required>
+                <label>Re-enter Password:</label>
+                <input class="form-control" type="password"  id= "reenterpass" required>
             </div>
             <div class="form-group">
                 <button class="btn btn-primary btn-block" type="submit">Register Account</button>
             </div>
+        </div>
         </form>
+        </div>
     </div>
 </div>
