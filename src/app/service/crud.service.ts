@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Course } from './Course';
+import { Course } from './course';
 import { Student } from './Student';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
